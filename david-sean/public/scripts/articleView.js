@@ -74,20 +74,20 @@ articleView.setTeasers = () => {
 };
 
 // COMMENT: When/where is this function invoked? What event ultimately triggers its execution? Explain the sequence of code execution when this function is invoked.
-// PUT YOUR RESPONSE HERE
+//This function is invoked on the new.html file. This function ultimately is triggered on page load after our js scripts have loaded.
 articleView.initNewArticlePage = () => {
   $('.tab-content').show();
   $('#export-field').hide();
   $('#article-json').on('focus', function(){
     this.select();
   });
-
+  debugger
   $('#new-form').on('change', 'input, textarea', articleView.create);
   $('#new-form').on('submit', articleView.submit);
 };
 
 // COMMENT: When is this function called? What event ultimately triggers its execution?
-// PUT YOUR RESPONSE HERE
+// This function is called when the av.initNewArticlePage is on the stack. That empties the input fields and then leaves the stack. When new data is input into the text areas then the function is called again and appends to preview and shows the export field. Ultimately this is triggered on page load and when there is a "change" to the input field.
 articleView.create = () => {
   let article;
   $('#articles').empty();
@@ -112,7 +112,7 @@ articleView.create = () => {
 };
 
 // COMMENT: When is this function called? What event ultimately triggers its execution?
-// PUT YOUR RESPONSE HERE
+// This is called when av.initNewArticlePage is on the stack. This method fires when the "submit" button is pressed on the webpage. 
 articleView.submit = event => {
   event.preventDefault();
   let article = new Article({
@@ -125,7 +125,7 @@ articleView.submit = event => {
   });
 
   // COMMENT: Where is this function defined? When is this function called? What event ultimately triggers its execution?
-  // PUT YOUR RESPONSE HERE
+  // This function defined in article.js as a prototype of Article constructor. It is called within the submit event and triggers when the user clicks the submit button on new.html.
   article.insertRecord();
 }
 
