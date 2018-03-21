@@ -50,7 +50,7 @@ Article.prototype.insertRecord = function(callback) {
       console.log(data);
 
       // COMMENT: What is the purpose of this line? Is the callback invoked when this method is called? Why or why not?
-      // PUT YOUR RESPONSE HERE
+      // After the $.post of insertRecord, if a callback function exist as a parameter of the .insertRecord, then run that callback function. The method is only invoked if it exists and it is only invoked after the $.post.
       if (callback) callback();
     })
 };
