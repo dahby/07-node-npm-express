@@ -1,0 +1,24 @@
+{
+  "name": "david-sean",
+  "version": "1.0.0",
+  "description": "lab07",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dahby/07-node-npm-express"
+  },
+  "keywords": [
+    "lab",
+    "server",
+    "codefellows"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
